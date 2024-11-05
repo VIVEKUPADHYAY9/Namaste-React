@@ -1,0 +1,21 @@
+{
+  "name": "namaste-re",
+  "version": "1.0.0",
+  "description": "this is re-js",
+  "main": "app.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "paracel buildindex.html",
+    "test": "jest"
+  },
+  "author": "vivek upadhya",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
