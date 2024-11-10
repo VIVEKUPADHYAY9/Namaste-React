@@ -1,4 +1,4 @@
-import { CDN_ULR } from "../src/utils/constants"
+import { CDN_ULR } from "../src/utils/constants";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
@@ -11,9 +11,14 @@ const RestaurantCard = (props) => {
       />
       <h4>{resData.info.name}</h4>
       <h4>{resData.info.cuisines.join(", ")}</h4>
+
+      {/* <ul> */}
+      {/* <li className="unoderlist"> */}
       <h4>{resData.info.avgRating}stars</h4>
       <h4>{resData.info.costForTwo}</h4>
       <h4>{resData.info.sla.deliveryTime},minutes</h4>
+      {/* </li> */}
+      {/* </ul> */}
     </div>
   );
 };
