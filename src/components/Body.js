@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-import RestaurantCard from "../RestaurantCard";
+import RestaurantCard from "../components/RestaurantCard";
 import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
 const Body = () => {
   const [listofRestaurants, setlistofRestaurants] = useState([]);
+  const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
 
   const filteredList = () => {
-    setlistofRestaurants(
+    setFilteredRestaurant(
       listofRestaurants.filter((res) => res.info.avgRating > 4.2)
     );
   };
@@ -25,6 +26,10 @@ const Body = () => {
     console.log(json);
     //optional chaining (?)
     setlistofRestaurants(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+
+    setFilteredRestaurant(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
@@ -52,7 +57,7 @@ const Body = () => {
               const filteredRestaurant = listofRestaurants.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
               );
-              setlistofRestaurants(filteredRestaurant);
+              setFilteredRestaurant(filteredRestaurant);
             }}
           >
             Search
@@ -63,7 +68,7 @@ const Body = () => {
         </button>
       </div>
       <div className="Restaurant-Container">
-        {listofRestaurants.map((restaurnt) => (
+        {filteredRestaurant.map((restaurnt) => (
           <RestaurantCard resData={restaurnt} />
         ))}
       </div>
