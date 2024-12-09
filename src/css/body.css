@@ -1,0 +1,37 @@
+.filter {
+  /* margin: auto; */
+  padding: 10px 122px;
+  width: 85%;
+}
+.searchBtn {
+  color: white;
+  border-radius: 14px;
+  /* border-width: 3px; */
+  font-size: 19px;
+  position: relative;
+  right: 52px;
+  cursor: pointer;
+}
+.searchBtn:hover {
+  color: black;
+}
+
+/* here top-restaurant-btn */
+
+.top-restaurant-btn {
+  /* padding: 2px; */
+  /* margin: 41px; */
+  /* background-color: green; */
+  color: white;
+  border-radius: 12px;
+  position: relative;
+  right: 108px;
+  font-size: 20px;
+}
+.top-restaurant-btn:hover {
+  color: black;
+  cursor: pointer;
+}
+.input-Btn {
+  border: 3px solid green;
+}

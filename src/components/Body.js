@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "../components/RestaurantCard";
-import resList from "../utils/mockData";
 import Shimmer from "./Shimmer";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import useOnlinestatus from "../utils/useonlinestatus";
+import resList from "../utils/mockData";
+import body from "../css/body.css";
 const Body = () => {
   const [listofRestaurants, setlistofRestaurants] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
@@ -13,13 +15,16 @@ const Body = () => {
       listofRestaurants.filter((res) => res.info.avgRating > 4.2)
     );
   };
+
+  const navigate = useNavigate();
+
   useEffect(() => {
     fetchData();
   }, []);
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.2904471&lng=82.986443&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.29790&lng=82.99560&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
 
     const json = await data.json();
@@ -35,24 +40,34 @@ const Body = () => {
     );
   };
 
+  function goToRestaurantMenu(resId) {
+    navigate(`/restaurants/${resId}`);
+  }
+
+  const onlineStatus = useOnlinestatus();
+  if (onlineStatus == false) {
+    return <h1>hey</h1>;
+  }
+
   if (listofRestaurants == 0) {
     return <Shimmer />;
   }
 
   return (
-    <div className="Body">
-      <div className="filter">
-        <div className="Search-bar">
+    <div className="Body w-[100%]">
+      <div className="filter gap-5 flex">
+        <div className="Search-bar m-9 p-5 flex items-center">
           <input
-            className="input-Btn"
+            className="input-Btn  pl-5 pr-14 py-2 border-3 border-solid  rounded-lg "
             type="text"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
+            placeholder="Find your best Restaurant"
           ></input>
           <button
-            className="search-Btn"
+            className="searchBtn px-2 py-2   border-1 border-solid bg-green-700  "
             onClick={() => {
               console.log(searchText);
               const filteredRestaurant = listofRestaurants.filter((res) =>
@@ -64,18 +79,20 @@ const Body = () => {
             Search
           </button>
         </div>
-        <button className="top-restaurant-btn" onClick={filteredList}>
-          Top Rate Restaurant
-        </button>
-      </div>
-      <div className="Restaurant-Container">
-        {filteredRestaurant.map((restaurnt) => (
-          <Link
-            key={restaurnt.info.id}
-            to={"/restaurnts/ " + restaurnt.info.id}
+        <div className="Search-bar m-9 p-5 flex items-center">
+          <button
+            className="top-restaurant-btn  bg-green-700 py-2 px-5"
+            onClick={filteredList}
           >
-            <RestaurantCard resData={restaurnt} />{" "}
-          </Link>
+            Top Rate Restaurant
+          </button>
+        </div>
+      </div>
+      <div className="resContainer  flex  flex-wrap items-center justify-center">
+        {filteredRestaurant?.map((restaurant) => (
+          <div onClick={() => goToRestaurantMenu(restaurant.info.id)}>
+            <RestaurantCard resData={restaurant} />
+          </div>
         ))}
       </div>
     </div>

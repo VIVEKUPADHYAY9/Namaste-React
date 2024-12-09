@@ -1,0 +1,42 @@
+.header {
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* border: 2px solid rgb(101, 88, 88); */
+  /* box-shadow: -3px 4px 7px green; */
+  /* position: sticky; */
+  /* top: 0; */
+  height: 100px;
+  background-color: whitesmoke;
+  z-index: 2;
+}
+
+.nav-bar > ul {
+  display: flex;
+  font-size: 20px;
+  list-style-type: none;
+}
+.nav-bar > ul > li {
+  padding: 12px;
+  margin: 6px;
+  font-size: 28px;
+}
+
+.nav-bar > ul > li:hover {
+  color: rgb(15, 241, 15);
+  cursor: pointer;
+}
+/* login-btn */
+.login-btn {
+  /* padding: 0 20px; */
+  /* margin: 10px 14px; */
+  border-radius: 10px;
+  border: none;
+  /* background-color: rgb(42, 216, 27); */
+  color: black;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  color: white;
+}
