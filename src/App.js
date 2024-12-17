@@ -6,6 +6,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
+import Footer from "./components/Footer";
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
@@ -13,7 +14,10 @@ const AppLayout = () => {
   return (
     <div>
       <Header />
-      <Outlet />
+      <div className="min-h-[68vh]">
+        <Outlet />
+      </div>
+      <Footer />
     </div>
   );
 };

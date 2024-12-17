@@ -1,211 +1,103 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  /* border: 2px solid rgb(101, 88, 88); */
-  box-shadow: -3px 4px 7px green;
-  position: sticky;
-  top: 0;
-  height: 100px;
-  background-color: whitesmoke;
-  z-index: 2;
-}
-.logo {
-  width: 100px;
-  height: 90px;
-  /* border: 2px solid black; */
-  border-radius: 34px;
-}
+React js interview Qustion ///
 
-.nav-bar > ul {
-  display: flex;
-  font-size: 24px;
-  list-style-type: none;
-}
-.nav-bar > ul > li {
-  padding: 12px;
-  margin: 6px;
-  font-size: 28px;
-}
+Q1-What is React?
 
-.nav-bar > ul > li:hover {
-  color: rgb(15, 241, 15);
-  cursor: pointer;
-}
-.Search-bar {
-  padding: 15px;
-  margin: 13px;
-}
-.search-Btn {
-  color: white;
-  background-color: green;
-  border: 2px solid green;
-  border-radius: 11px;
-  margin: 13px 12px;
-  padding: 7px 6px;
-  font-size: 14px;
-  position: relative;
-  right: 44px;
-  cursor: pointer;
-  /* z-index: 0; */
-}
-.search-Btn:hover {
-  color: black;
-}
-.input-Btn {
-  border: 2px solid green;
-  border-radius: 10px;
-  padding: 7px;
-  margin: 2px;
-}
-.res-cards {
-  width: 200px;
-  height: 250px;
-  /* border: 2px solid black; */
-  background-color: #f0f0f0;
-  padding: 5px;
-  border-radius: 5px;
-}
-.Restaurant-Container {
-  margin: 53px;
-  padding: 27px;
-  display: flex;
-  height: 200px;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.res-logo {
-  width: 100%;
-  height: 40%;
-  object-fit: cover;
-  /* border-radius: 46px; */
-}
+Answer: React is a JavaScript library for building user interfaces, developed by Facebook.
+and React is called a single page application ,
+in a react render cycle is very fast
 
-h4 {
-  margin: 4px;
-  line-height: 26px;
-}
-.res-cards:hover {
-  border: 2px solid rgb(72, 61, 61);
-  cursor: pointer;
-}
-.res-cards > h4 {
-  /* border: 2px solid black; */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 
-.shimmer-container {
-  margin: 53px;
-  padding: 27px;
-  display: flex;
-  height: 200px;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.shimmer-card {
-  width: 200px;
-  height: 300px;
-  /* border: 2px solid black; */
-  background-color: #f0f0f0;
-  padding: 5px;
-  border-radius: 5px;
-}
-.login-btn {
-  padding: 0 20px;
-  margin: 10px 14px;
-  border-radius: 10px;
-  border: none;
-  background-color: rgb(42, 216, 27);
-  color: black;
-  font-size: 22px;
-  cursor: pointer;
-}
+Q2-What is JSX?
 
-.login-btn:hover {
-  color: white;
-}
-.filter {
-  display: flex;
-}
-.top-restaurant-btn {
-  /* padding: 2px; */
-  margin: 41px;
-  background-color: green;
-  color: white;
-  border-radius: 10px;
-  position: relative;
-  right: 68px;
-}
-.top-restaurant-btn:hover {
-  color: black;
-  cursor: pointer;
-}
-/* src/components/ErrorPage.css */
+Answer: - JSx Allow use to write a HTML in react.
+-JSX make it easier to write and add HTML in react,
+-brower can not understands jsx,it only understands js.JSX are transpiled before it reaches to js engine in browser,
+-transpiled means it will convert our the code to understand React or Browser.
 
-.error-page {
-  text-align: center;
-  padding: 50px;
-  font-family: "Arial", sans-serif;
-}
 
-.error-page h1 {
-  color: #ff6347; /* Tomato color to match a food theme */
-}
 
-.error-page p {
-  margin-top: 10px;
-  font-size: 18px;
-}
 
-.error-page .error-image {
-  margin: 20px 0;
-  max-width: 100%;
-  height: 215px;
-  border: 2px solid green;
-  border-radius: 20px;
-}
-.card-ul {
-  padding: 0px;
-  margin: -3px;
-  display: flex;
-}
+Q3-What are components in React?
 
-.delivery-time {
-  margin: -3px;
-  padding: 1px;
-  position: relative;
-  left: 12px;
-}
-.star1 {
-  background-color: green;
-  color: white;
-  border-radius: 45%;
-  margin: 10px;
-  position: relative;
-  left: -3px;
-}
-.cuisines {
-  margin: 0px;
-  padding: 0px;
-}
-.name {
-  margin: 0px;
-  padding: 0px;
-  font-family: Gilroy_Bold;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 24px;
-  letter-spacing: -0.3px;
-  color: rgba(2, 6, 12, 0.92);
-  overflow: hidden;
-  width: 100%;
-}
-#star2 {
-  margin: 2px;
-  padding: 2px;
-  position: relative;
-  left: -12px;
-}
+Answer: Components are reusable building blocks of a React application. They can be functional or class-based.
+and they are JavaScript Function but returns HTML code(jsx)
+  ex-  function Component(){
+    return(
+      <div>
+      .
+      .
+      </div>
+    )
+  }
+  export default Component,
+-Component are of two types
+1.functional components
+2.class-based components
 
-/* offline game code of css */
+
+Q4-What is the difference between state and props?
+
+Answer:
+-State: a state is a buit-in react object is use for contain the data or information about the component.
+-A component`s state can change overtime;whenever it changes components re-renders,
+Holds data that can change over time. Managed within the component.
+Props: Passed from parent to child component as read-only data.
+
+
+Q5-What is the virtual DOM in React?
+
+Answer: The virtual DOM is a lightweight copy of the real DOM. React uses it to determine the minimum updates required, improving performance.
+
+
+
+Q6-What is the use of the useState hook?
+
+Answer: useState is a React hook that allows you to add state to functional components.
+
+
+Q7-What is the purpose of the useEffect hook?
+
+Answer: useEffect is used to handle side effects, such as data fetching or updating the DOM after render.
+
+
+
+Q8-What is the difference between controlled and uncontrolled components?
+
+Answer:
+Controlled: Input values are controlled by React state.
+Uncontrolled: Input values are managed by the DOM itself.
+
+
+
+Q9-What are React fragments?
+
+Answer: React fragments (<></> or <React.Fragment>) allow grouping of multiple elements without adding an extra DOM node.
+
+
+
+Q10-What are keys in React lists?
+
+Answer: Keys help React identify and update items efficiently in a list. They should be unique among siblings.
+
+
+
+Q11-What is the difference between React and other frameworks like Angular or Vue?
+
+Answer: React focuses on UI (component-based architecture) and uses a virtual DOM, while Angular is a full-fledged MVC framework, and Vue combines features of both.
+
+
+Q12-What are props drilling and context API?
+
+Answer:
+Props Drilling: Passing props through multiple components to reach a child component.
+Context API: Provides a way to share values without explicitly passing props through every level.
+
+
+Q13-What is React Router?
+
+Answer: React Router is used for client-side navigation, enabling single-page applications (SPAs) to handle routes.
+
+
+Q14-What is Redux? Why is it used?
+
+Answer: Redux is a state management library used for managing complex application states in a predictable way.

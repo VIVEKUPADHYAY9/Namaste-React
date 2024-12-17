@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import RestaurantCard from "../components/RestaurantCard";
+import RestaurantCard, { withPromoteLabel } from "../components/RestaurantCard";
 import Shimmer from "./Shimmer";
 import { useNavigate } from "react-router-dom";
 import useOnlinestatus from "../utils/useonlinestatus";
@@ -9,6 +9,8 @@ const Body = () => {
   const [listofRestaurants, setlistofRestaurants] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const ReastaurantCardPromoted = withPromoteLabel(RestaurantCard);
+  // console.log(listofRestaurants);
 
   const filteredList = () => {
     setFilteredRestaurant(
@@ -29,7 +31,7 @@ const Body = () => {
 
     const json = await data.json();
 
-    console.log(json);
+    // console.log(json);
     //optional chaining (?)
     setlistofRestaurants(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -49,12 +51,12 @@ const Body = () => {
     return <h1>hey</h1>;
   }
 
-  if (listofRestaurants == 0) {
-    return <Shimmer />;
-  }
+  // if (listofRestaurants == 0) {
+  //   return <Shimmer />;
+  // }
 
   return (
-    <div className="Body w-[100%]">
+    <div className="Body w-[100%] ">
       <div className="filter gap-5 flex">
         <div className="Search-bar m-9 p-5 flex items-center">
           <input
@@ -90,8 +92,15 @@ const Body = () => {
       </div>
       <div className="resContainer  flex  flex-wrap items-center justify-center">
         {filteredRestaurant?.map((restaurant) => (
-          <div onClick={() => goToRestaurantMenu(restaurant.info.id)}>
-            <RestaurantCard resData={restaurant} />
+          <div
+            key={restaurant?.info?.id}
+            onClick={() => goToRestaurantMenu(restaurant.info.id)}
+          >
+            {restaurant.info.Promoted ? (
+              <ReastaurantCardPromoted resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
           </div>
         ))}
       </div>

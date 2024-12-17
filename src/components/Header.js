@@ -23,16 +23,18 @@ const Header = () => {
             <Link to="/Contact">Contact Us</Link>
           </li>
           <li className="px-4"> Cart(0)</li>
-          <button
-            className="login-btn  p-5 ml-4 -mr-7 mt-0 mb-0 bg-green-700 "
-            onClick={() => {
-              btnLogin == "Login"
-                ? setBtnLogin("Logout")
-                : setBtnLogin("Login");
-            }}
-          >
-            {btnLogin}
-          </button>
+          <li id="loginbtn">
+            <button
+              className="login-btn  bg-green-700 "
+              onClick={() => {
+                btnLogin == "Login"
+                  ? setBtnLogin("Logout")
+                  : setBtnLogin("Login");
+              }}
+            >
+              {btnLogin}
+            </button>
+          </li>
         </ul>
       </div>
     </div>

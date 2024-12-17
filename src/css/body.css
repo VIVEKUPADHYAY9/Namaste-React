@@ -1,3 +1,6 @@
+.Body {
+  min-height: 70bh;
+}
 .filter {
   /* margin: auto; */
   padding: 10px 122px;

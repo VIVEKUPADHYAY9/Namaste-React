@@ -19,6 +19,8 @@
   padding: 12px;
   margin: 6px;
   font-size: 28px;
+  font-size: larger;
+  font-weight: bolder;
 }
 
 .nav-bar > ul > li:hover {
@@ -34,9 +36,17 @@
   /* background-color: rgb(42, 216, 27); */
   color: black;
   font-size: 22px;
+  font-weight: bolder;
+  height: 35px;
+  width: 100px;
   cursor: pointer;
 }
 
 .login-btn:hover {
   color: white;
+}
+#loginbtn {
+  padding-left: 2px;
+  padding-right: 3px;
+  margin-bottom: 2px;
 }

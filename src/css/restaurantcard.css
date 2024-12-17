@@ -20,27 +20,14 @@
   cursor: pointer;
   transform: scale(0.95);
 }
-/* .resCard > h2, */
-/* h4 {
-  margin: 5px 0px;
-  color: black;
-  /* text-decoration: none; */
-/* white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; */
-/* } */
+
 .resCard > img {
   width: 100%;
   height: 50%;
   border-radius: 20px;
   object-fit: cover;
 }
-/* .Star { */
-/* list-style: none; */
-/* display: flex; */
-/* margin: -5px; */
-/* padding: 2px; */
-/* } */
+
 .star1 {
   /* background-color: green; */
   color: white;

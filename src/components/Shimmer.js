@@ -1,3 +1,4 @@
+// import Shimmer from "../css/shimmer.css";
 const Shimmer = () => {
   return (
     <div className="Search-bar">
